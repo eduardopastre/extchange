@@ -1,12 +1,12 @@
 $(document).ready ->
-  $('form').submit ->
-    if $('form').attr('action') == '/exchange'
-      exchange()
-  
+  last_type = Date.now()
+
   $('#quantity').change -> 
+    last_type = Date.now()
     exchange()
 
   $('#quantity').keyup ->
+    last_type = Date.now()
     exchange()
     
   $('.currency_options').change ->
@@ -22,27 +22,20 @@ $(document).ready ->
       exchange()
 
   exchange = () ->
-    $.ajax '/exchange',
-      type: 'POST'
-      dataType: 'json'
-      data: {
-              currency: $("#currency").val(),
-              currency_destination: $("#currency_destination").val(),
-              quantity: $("#quantity").val()
-            }
-      error: (jqXHR, textStatus, errorThrown) ->
-        alert textStatus
-      success: (data, text, jqXHR) ->
-        $('#result').val(data.value)
-    return false;
-    
-
-###
- evento quando select e evento quando digita valor
- botão trocar moedas
-
- README
- como baixar o projeto instalar usar na máquina requerimentos
- o que o projeto faz, tecnologias
- print screen da página
-###
+    setTimeout ->       
+      if (Date.now() - last_type) >= 900
+        console.log (Date.now() - last_type)
+        $.ajax '/exchange',
+          type: 'POST'
+          dataType: 'json'
+          data: {
+                  currency: $("#currency").val(),
+                  currency_destination: $("#currency_destination").val(),
+                  quantity: $("#quantity").val()
+                }
+          error: (jqXHR, textStatus, errorThrown) ->
+            alert textStatus
+          success: (data, text, jqXHR) ->
+            $('#result').val(data.value)
+        return false;
+    , 1000

@@ -26,7 +26,7 @@ git clone https://github.com/eduardopastre/exchange.git
 bundle exec rake db:create
 ```
 
-3. Rodando o projeto
+* Rodando o projeto
 ```
 rails s
 ```
