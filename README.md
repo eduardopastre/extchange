@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/eduardopastre/exchange/master/public/logo.png)
+![alt text](https://www.dropbox.com/s/72w8qgypp3eatv7/exchange.jpeg?dl=0)
 
 # APP EXCHANGE
 
