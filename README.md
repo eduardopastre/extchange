@@ -1,4 +1,4 @@
-![alt text](https://www.dropbox.com/s/72w8qgypp3eatv7/exchange.jpeg?dl=0)
+![alt text](https://www.dropbox.com/s/72w8qgypp3eatv7/exchange.jpeg?raw=1)
 
 # APP EXCHANGE
 
@@ -38,3 +38,7 @@ Os testes foram escritos usando RSpec, para rodar os testes execute
 ```
 rspec spec
 ```
+
+## O resultado
+
+![alt text](https://www.dropbox.com/s/imi03xxyo66yo0b/home.jpeg?raw=1)
