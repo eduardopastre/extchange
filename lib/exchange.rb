@@ -9,7 +9,7 @@ module Currency
       value = JSON.parse(res.body)['rates'][currency_destination]
       return (value * quantity).round(2)
     rescue
-      return "A conversão falhou"
+      return "A conversão falhou."
     end
   end
 end
